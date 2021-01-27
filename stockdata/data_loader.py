@@ -9,16 +9,10 @@ rows = []
 
 class Data_Loader:
 
-    # data_folder = Path("resources/")
-    # csv_path = data_folder / 'stocks.csv'
-    # rows = []
-
-    # def run_data_loader(self):
-    #     import_csv()
-    #     clean_data()
-    #     convert_dates()
-    #     print("hello world")
-    #     print(rows[:5])
+    def main(self):
+        self.import_csv()
+        self.clean_data()
+        self.convert_dates()
 
     def import_csv(self):
         with open(csv_path, 'r') as csvfile:
@@ -40,14 +34,8 @@ class Data_Loader:
                 continue
             rows[index][7] = str(dateutil.parser.parse(row[7]).date())
 
-    def main(self):
-        self.import_csv()
-        self.clean_data()
-        self.convert_dates()
-        print("hello world")
-        print(rows[:5])
-
 
 x = Data_Loader()
-print(x)
 x.main()
+print("data loader ran")
+print(rows[:5])
