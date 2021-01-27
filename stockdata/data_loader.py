@@ -9,10 +9,14 @@ rows = []
 
 class Data_Loader:
 
+    print("data loader loaded")
+
     def main(self):
         self.import_csv()
         self.clean_data()
         self.convert_dates()
+        print("data_loader main ran")
+        return rows
 
     def import_csv(self):
         with open(csv_path, 'r') as csvfile:
@@ -35,7 +39,7 @@ class Data_Loader:
             rows[index][7] = str(dateutil.parser.parse(row[7]).date())
 
 
-x = Data_Loader()
-x.main()
+# x = Data_Loader()
+# x.main()
 print("data loader ran")
-print(rows[:5])
+# print(rows[:5])
