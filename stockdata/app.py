@@ -1,13 +1,16 @@
 from data_loader import Data_Loader
 from stock_model import StockData
+import interface
 
+interface = interface.Interface()
 stocks = []
 
 
-class StockDataApp:
+class Main:
 
     def __init__(self):
         self.populate_stocks()
+        interface.welcome()
 
     def populate_stocks(self):
         data_loader = Data_Loader()
@@ -16,7 +19,8 @@ class StockDataApp:
             stocks.append(StockData(row))
 
 
-StockDataApp()
+# dev stuff
+Main()
 
-for stock in stocks[:5]:
-    print(stock.__dict__)
+# for stock in stocks[:5]:
+#     print(stock.__dict__)
