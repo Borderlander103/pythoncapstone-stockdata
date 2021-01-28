@@ -11,6 +11,7 @@ class Main:
     def __init__(self):
         self.populate_stocks()
         interface.welcome()
+        interface.main_menu()
 
     def populate_stocks(self):
         data_loader = Data_Loader()
