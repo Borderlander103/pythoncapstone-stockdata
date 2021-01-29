@@ -3,7 +3,14 @@ import time
 
 class Interface:
 
-    options = ["name", "industry", "market", "Quit"]
+    # These are the three values to be collected from the user
+    key = None
+    value = None
+    currency = None
+
+    choice = None
+    options = ["name", "industry",
+               "market", "currency", "Exit"]
 
     def welcome(self):
         print("\n\n\n\n\n\n\n    --- Stock Data Reports --- \n")
@@ -12,22 +19,40 @@ class Interface:
 
     def main_menu(self):
         print("Please choose from the following options (enter only \nthe number):\n")
-        print("1. Lookup by name")
-        print("2. Lookup by industry")
-        print("3. Lookup by market")
-        print("4. Quit\n")
+        print("1. Lookup report by name")
+        print("2. Lookup report by industry")
+        print("3. Lookup report by market")
+        print("4. Convert currency of given stock")
+        print("5. Exit\n")
         try:
-            choice = self.options[int(input()) - 1]
+            self.choice = self.options[int(input()) - 1]
         except:
             self.main_validation()
         else:
-            if choice == "Quit":
+            if self.choice == "Exit":
                 print("\nGoodbye.\n")
                 quit()
-            print(f"\nOkay, looking up by {choice}.")
-            time.sleep(2)
-            print("Give me a second...")
-            time.sleep(2)
+            if self.choice == "currency":
+                self.get_currency()
+                # print(f"\nOkay, looking up by {choice}.")
+                # time.sleep(2)
+                # print("Give me a second...")
+                # time.sleep(2)
+            self.get_key(self.choice)
+            self.get_value(self.choice)
+            print(self.key, self.value, self.currency)
+
+    def get_key(self, choice):
+        self.key = choice
+
+    def get_value(self, choice):
+        print(f"\nPlease enter the desired {choice}:\n")
+        self.value = input()
+
+    def get_currency(self):
+        print(f"\nPlease enter the three letter code for your \ndesired currency (e.g. USD, EUR):\n")
+        self.currency = input()
+        self.choice = "name"
 
     def main_validation(self):
         time.sleep(1)
