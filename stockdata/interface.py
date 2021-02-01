@@ -51,7 +51,7 @@ class Interface:
 
     def get_currency(self):
         print(f"\nPlease enter the three letter code for your \ndesired currency (e.g. USD, EUR):\n")
-        self.currency = input()
+        self.currency = input().upper()
         self.choice = "name"
 
     def main_validation(self):
