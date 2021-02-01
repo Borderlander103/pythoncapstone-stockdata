@@ -1,12 +1,13 @@
 import time
+import settings
 
 
 class Interface:
 
-    # These are the three values to be collected from the user
-    key = None
-    value = None
-    currency = None
+    # # These are the three values to be collected from the user
+    # key = None
+    # value = None
+    # currency = None
 
     choice = None
     options = ["name", "industry",
@@ -40,18 +41,19 @@ class Interface:
                 # time.sleep(2)
             self.get_key(self.choice)
             self.get_value(self.choice)
-            return (self.key, self.value, self.currency)
+            # return (self.key, self.value, self.currency)
+            # print(settings.key, settings.value, settings.currency)
 
     def get_key(self, choice):
-        self.key = choice
+        settings.key = choice
 
     def get_value(self, choice):
         print(f"\nPlease enter the desired {choice}:\n")
-        self.value = input()
+        settings.value = input()
 
     def get_currency(self):
         print(f"\nPlease enter the three letter code for your \ndesired currency (e.g. USD, EUR):\n")
-        self.currency = input().upper()
+        settings.currency = input().upper()
         self.choice = "name"
 
     def main_validation(self):
