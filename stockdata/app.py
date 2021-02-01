@@ -4,6 +4,9 @@ import interface
 
 interface = interface.Interface()
 stocks = []
+key = None
+value = None
+currency = None
 
 
 class Main:
@@ -11,7 +14,11 @@ class Main:
     def __init__(self):
         self.populate_stocks()
         interface.welcome()
-        interface.main_menu()
+        input = interface.main_menu()
+        self.key = input[0]
+        self.value = input[1]
+        self.currency = input[2]
+        print(self.key, self.value, self.currency)
 
     def populate_stocks(self):
         data_loader = Data_Loader()

@@ -40,7 +40,7 @@ class Interface:
                 # time.sleep(2)
             self.get_key(self.choice)
             self.get_value(self.choice)
-            print(self.key, self.value, self.currency)
+            return (self.key, self.value, self.currency)
 
     def get_key(self, choice):
         self.key = choice
