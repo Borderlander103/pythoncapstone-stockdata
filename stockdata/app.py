@@ -2,6 +2,7 @@ from data_loader import Data_Loader
 from stock_model import StockData
 import interface
 import settings
+import filters
 
 interface = interface.Interface()
 # stocks = []
@@ -18,6 +19,7 @@ class Main:
         interface.welcome()
         # self.populate_values(interface.main_menu)
         interface.main_menu()
+        filters.filter_stocks()
 
     def populate_stocks(self):
         data_loader = Data_Loader()
@@ -25,16 +27,9 @@ class Main:
         for row in rows:
             settings.stocks.append(StockData(row))
 
-    # def populate_values(self):
-    #     self.key = input[0]
-    #     self.value = input[1]
-    #     self.currency = input[2]
-
-    def stock_filter(self, stock):
-        pass
-
-    def select_stock(self):
-        pass
+    def populate_stock_values(self):
+        for stock in settings.filtered_stocks:
+            settings.stock_values.append(float(stock.price))
 
 
 # dev stuff
