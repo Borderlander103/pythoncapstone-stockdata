@@ -1,6 +1,7 @@
 {
     "python.pythonPath": "C:\\Users\\brichardson\\Anaconda3\\python.exe",
-    "python.autoComplete.extraPaths": ["C:\\Users\\brichardson\\Catalyte\\DataEngineering_ADT\\pythoncapstone-stockdata\\stockdata"],
+    "python.autoComplete.extraPaths": ["..\\stockdata"],
+    // "python.autoComplete.extraPaths": ["C:\\Users\\brichardson\\Catalyte\\DataEngineering_ADT\\pythoncapstone-stockdata\\stockdata"],
     "files.autoSave": "onFocusChange",
     "editor.rulers": [
     
