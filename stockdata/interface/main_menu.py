@@ -1,5 +1,6 @@
 import settings
 import time
+from interface import helper_functions
 
 
 class Main_Menu:
@@ -18,11 +19,10 @@ class Main_Menu:
         try:
             self.choice = self.options[int(input()) - 1]
         except:
-            self.main_validation()
+            helper_functions.main_validation()
         else:
             if self.choice == "Exit":
-                print("\nGoodbye.\n")
-                quit()
+                helper_functions.exit_app()
             if self.choice == "currency":
                 self.get_currency()
             self.get_key(self.choice)

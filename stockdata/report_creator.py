@@ -19,9 +19,9 @@ class Report_Creator(Analysis_Utils):
             self.max_min(settings.stock_values)[0], 2)
 
     def print_report(self):
-        time.sleep(2)
+        time.sleep(1)
         print(f"\n\nOkay, looking this up.")
-        time.sleep(3)
+        time.sleep(2)
         print("\nGive me a second...")
         time.sleep(3)
         print(self.headline)

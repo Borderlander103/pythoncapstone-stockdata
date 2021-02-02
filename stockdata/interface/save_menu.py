@@ -1,6 +1,6 @@
 import settings
 import time
-from interface import main_menu
+from interface import main_menu, helper_functions
 
 
 class Save_Menu:
@@ -17,7 +17,7 @@ class Save_Menu:
         try:
             self.choice = self.options[int(input()) - 1]
         except:
-            self.main_validation()
+            helper_functions.main_validation()
         else:
             if self.choice == "save":
                 print("save")
@@ -25,8 +25,7 @@ class Save_Menu:
                 main_menu = self.main_menu.Main_Menu()
                 main_menu.main_menu()
             elif self.choice == "Exit":
-                print("\nGoodbye.\n")
-                quit()
+                helper_functions.exit_app()
 
     def get_key(self, choice):
         settings.key = choice
@@ -40,8 +39,8 @@ class Save_Menu:
         settings.currency = input().upper()
         self.choice = "name"
 
-    def main_validation(self):
-        time.sleep(1)
-        print("\nYou entered an invalid option. Try again.\n")
-        time.sleep(2)
-        self.main_menu()
+    # def main_validation(self):
+    #     time.sleep(1)
+    #     print("\nYou entered an invalid option. Try again.\n")
+    #     time.sleep(2)
+    #     self.main_menu()
