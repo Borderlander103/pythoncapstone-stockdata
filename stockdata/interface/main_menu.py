@@ -1,12 +1,8 @@
 import settings
+import time
 
 
-class Interface:
-
-    # # These are the three values to be collected from the user
-    # key = None
-    # value = None
-    # currency = None
+class Main_Menu:
 
     choice = None
     options = ["name", "industry",

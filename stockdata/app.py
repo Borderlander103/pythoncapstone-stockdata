@@ -1,19 +1,19 @@
+import report_creator
+import filters
+import settings
+from interface import welcome, main_menu, print_menu
 from data_loader import Data_Loader
 from stock_model import StockData
-import interface
-import settings
-import filters
-import report_creator
 
-interface = interface.Interface()
+main_menu = main_menu.Main_Menu()
 
 
 class App:
 
     def __init__(self):
         self.populate_stocks()
-        interface.welcome()
-        interface.main_menu()
+        welcome.welcome()
+        main_menu.main_menu()
         filters.filter_stocks()
         self.populate_stock_values()
         self.generate_report()
