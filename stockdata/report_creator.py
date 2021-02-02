@@ -1,4 +1,5 @@
 import statistics
+import time
 import settings
 from analysis_utils import Analysis_Utils
 
@@ -18,11 +19,18 @@ class Report_Creator(Analysis_Utils):
             self.max_min(settings.stock_values)[0], 2)
 
     def print_report(self):
+        time.sleep(2)
+        print(f"\n\nOkay, looking this up.")
+        time.sleep(3)
+        print("\nGive me a second...")
+        time.sleep(3)
         print(self.headline)
         print(self.average_val)
         print(self.median_val)
         print(self.min_val)
         print(self.max_val)
+        time.sleep(3)
+
         # print(settings.key,
         #       settings.value, settings.currency)
         # print((max(settings.stock_values), min(settings.stock_values)))
