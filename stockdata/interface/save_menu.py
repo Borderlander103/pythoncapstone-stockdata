@@ -38,9 +38,3 @@ class Save_Menu:
         print(f"\nPlease enter the three letter code for your \ndesired currency (e.g. USD, EUR):\n")
         settings.currency = input().upper()
         self.choice = "name"
-
-    # def main_validation(self):
-    #     time.sleep(1)
-    #     print("\nYou entered an invalid option. Try again.\n")
-    #     time.sleep(2)
-    #     self.main_menu()
