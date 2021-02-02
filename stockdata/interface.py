@@ -1,4 +1,3 @@
-import time
 import settings
 
 
@@ -35,10 +34,6 @@ class Interface:
                 quit()
             if self.choice == "currency":
                 self.get_currency()
-                # print(f"\nOkay, looking up by {choice}.")
-                # time.sleep(2)
-                # print("Give me a second...")
-                # time.sleep(2)
             self.get_key(self.choice)
             self.get_value(self.choice)
             # return (self.key, self.value, self.currency)
