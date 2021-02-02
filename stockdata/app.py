@@ -16,7 +16,7 @@ class App:
         interface.main_menu()
         filters.filter_stocks()
         self.populate_stock_values()
-        report_creator.generate_report()
+        self.generate_report()
 
     def populate_stocks(self):
         data_loader = Data_Loader()
@@ -27,6 +27,10 @@ class App:
     def populate_stock_values(self):
         for stock in settings.filtered_stocks:
             settings.stock_values.append(float(stock.price))
+
+    def generate_report(self):
+        reports = report_creator.Report_Creator()
+        reports.print_report()
 
 
 # dev stuff
