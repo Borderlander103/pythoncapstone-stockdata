@@ -3,23 +3,20 @@ from stock_model import StockData
 import interface
 import settings
 import filters
+import report_creator
 
 interface = interface.Interface()
-# stocks = []
-# selected_stock = []
-# key = None
-# value = None
-# currency = None
 
 
-class Main:
+class App:
 
     def __init__(self):
         self.populate_stocks()
         interface.welcome()
-        # self.populate_values(interface.main_menu)
         interface.main_menu()
         filters.filter_stocks()
+        self.populate_stock_values()
+        report_creator.generate_report()
 
     def populate_stocks(self):
         data_loader = Data_Loader()
@@ -29,11 +26,16 @@ class Main:
 
     def populate_stock_values(self):
         for stock in settings.filtered_stocks:
-            settings.stock_values.append(float(stock.price))
+            # numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            # for stock in numbers:
+            # print(stock.industry, stock.price)
+            print('hi')
+            # settings.stock_values.append(float(stock.price))
+            print(stock)
 
 
 # dev stuff
-Main()
+App()
 
 # for stock in stocks[:5]:
 #     print(stock.__dict__)

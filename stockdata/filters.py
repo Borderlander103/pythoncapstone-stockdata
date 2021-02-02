@@ -1,36 +1,36 @@
 import settings
 
 
-def filter_stocks(self):
-    if settings.key == 'name':
-        settings.selected_stock = filter(
-            filters.nameFilter, settings.filtered_stocks)
-    elif settings.key == 'industry':
-        settings.selected_stock = filter(
-            filters.industryFilter, settings.filtered_stocks)
-    elif settings.key == 'market':
-        settings.selected_stock = filter(
-            filters.marketFilter, settings.filtered_stocks)
-    else:
-        print("You shouldn't get here.")
-
-
 def nameFilter(stock):
-    if(stock.name == settings.key):
+    if(stock.name == settings.value):
         return True
     else:
         return False
 
 
 def industryFilter(stock):
-    if(stock.industry == settings.key):
+    if(stock.industry == settings.value):
         return True
     else:
         return False
 
 
 def marketFilter(stock):
-    if(stock.market == settings.key):
+    if(stock.market == settings.value):
         return True
     else:
         return False
+
+
+def filter_stocks():
+    if settings.key == 'name':
+        settings.filtered_stocks = list(filter(
+            nameFilter, settings.stocks))
+    elif settings.key == 'industry':
+        settings.filtered_stocks = filter(
+            industryFilter, settings.stocks)
+    elif settings.key == 'market':
+        settings.filtered_stocks = filter(
+            marketFilter, settings.stocks)
+    else:
+        print("You shouldn't get here.")

@@ -1,5 +1,7 @@
+
+
 stocks = []
-filtered_stock = []
+filtered_stocks = []
 stock_values = []
 key = None
 value = None
