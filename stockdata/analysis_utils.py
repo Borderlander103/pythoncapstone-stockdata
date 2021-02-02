@@ -4,7 +4,8 @@ from currency_converter import CurrencyConverter
 
 class Analysis_Utils:
 
-    converter = CurrencyConverter()
+    def __init__(self):
+        converter = CurrencyConverter()
 
     def max_min(self, values):
         return (max(values), min(values))
@@ -16,4 +17,4 @@ class Analysis_Utils:
         return statistics.median(values)
 
     def conver_currency(self, value, new_currency):
-        return converter.convert(value, 'USD', new_currency)
+        return self.converter.convert(value, 'USD', new_currency)
