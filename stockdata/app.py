@@ -26,12 +26,7 @@ class App:
 
     def populate_stock_values(self):
         for stock in settings.filtered_stocks:
-            # numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-            # for stock in numbers:
-            # print(stock.industry, stock.price)
-            print('hi')
-            # settings.stock_values.append(float(stock.price))
-            print(stock)
+            settings.stock_values.append(float(stock.price))
 
 
 # dev stuff
