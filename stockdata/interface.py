@@ -12,11 +12,6 @@ class Interface:
     options = ["name", "industry",
                "market", "currency", "Exit"]
 
-    def welcome(self):
-        print("\n\n\n\n\n\n\n    --- Stock Data Reports --- \n")
-        print("This small utility will provide basic reports based on ")
-        print("imported stock data.\n")
-
     def main_menu(self):
         print("Please choose from the following options (enter only \nthe number):\n")
         print("1. Lookup report by name")
