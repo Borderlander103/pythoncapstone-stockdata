@@ -1,5 +1,6 @@
 import time
 import settings
+import report_creator
 from interface import helper_functions
 
 
@@ -20,7 +21,9 @@ class Save_Menu:
             helper_functions.validation()
         else:
             if self.choice == "save":
-                print("save")
+                report = report_creator.Report_Creator()
+                report.save_report()
+                helper_functions.restart()
             elif self.choice == "Main Menu":
                 helper_functions.restart()
             elif self.choice == "Exit":

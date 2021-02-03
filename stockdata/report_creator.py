@@ -1,7 +1,12 @@
-import statistics
 import time
+import datetime
 import settings
+from pathlib import Path
 from analysis_utils import Analysis_Utils
+
+report_name = 'stock_reports.txt'
+output_folder = Path("output/")
+report_file = output_folder / report_name
 
 
 class Report_Creator(Analysis_Utils):
@@ -36,4 +41,19 @@ class Report_Creator(Analysis_Utils):
         input()
 
     def save_report(self):
-        print("save")
+        report = open(report_file, "a")
+        report.write(f"\n\n\n{datetime.datetime.now()}\n")
+        report.write("-------------------")
+        report.write(self.headline)
+        report.write(self.average_val)
+        report.write(self.median_val)
+        report.write(self.min_val)
+        report.write(self.max_val)
+        report.write("-------------------")
+        report.close()
+        print(f"\nThe report has been saved as '{report_name}'.")
+        print("\nIt is located in here:")
+        print(f"{Path().absolute()}\{output_folder}")
+        time.sleep(2)
+        print("\nPress Enter to return to the Main Menu.")
+        input()
