@@ -10,7 +10,7 @@ class Main_Menu:
                "market", "currency", "Exit"]
 
     def main_menu(self):
-        print("Please choose from the following options (enter only \nthe number):\n")
+        print("\nPlease choose from the following options (enter only \nthe number):\n")
         print("1. Lookup report by name")
         print("2. Lookup report by industry")
         print("3. Lookup report by market")

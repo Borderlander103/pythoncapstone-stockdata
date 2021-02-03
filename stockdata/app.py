@@ -6,6 +6,7 @@ from data_loader import Data_Loader
 from stock_model import StockData
 
 main_menu = main_menu.Main_Menu()
+save_menu = save_menu.Save_Menu()
 
 
 class App:
@@ -17,6 +18,7 @@ class App:
         filters.filter_stocks()
         self.populate_stock_values()
         self.generate_report()
+        save_menu.save_menu()
 
     def populate_stocks(self):
         data_loader = Data_Loader()

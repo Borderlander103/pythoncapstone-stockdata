@@ -8,7 +8,7 @@ class Report_Creator(Analysis_Utils):
 
     def __init__(self, ) -> None:
         super().__init__()
-        self.headline = f"\n\n\nStock Report for the {settings.key.title()} '{settings.value}':\n"
+        self.headline = f"Stock Report for the {settings.key.title()} '{settings.value}':\n"
         self.average_val = "Average Value: ${:,.2f}".format(
             self.average(settings.stock_values), 2)
         self.median_val = "Median Value: ${:,.2f}".format(
@@ -22,19 +22,16 @@ class Report_Creator(Analysis_Utils):
         time.sleep(1)
         print(f"\n\nOkay, looking this up.")
         time.sleep(2)
-        print("\nGive me a second...")
+        print("Give me a second...")
         time.sleep(3)
+        print("\n\n\n-------------------")
         print(self.headline)
         print(self.average_val)
         print(self.median_val)
         print(self.min_val)
         print(self.max_val)
+        print("-------------------")
         time.sleep(3)
 
-        # print(settings.key,
-        #       settings.value, settings.currency)
-        # print((max(settings.stock_values), min(settings.stock_values)))
-        # print(min(settings.stock_values))
-        # print(max(settings.stock_values))
-        # print(sum(settings.stock_values)/len(settings.stock_values))
-        # print(statistics.median(settings.stock_values))
+    def save_report(self):
+        print("save")

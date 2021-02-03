@@ -8,8 +8,8 @@ class Save_Menu:
     choice = None
     options = ["save", "Main Menu", "Exit"]
 
-    def print_menu(self):
-        print("\n\nPlease choose from the following options (enter only \nthe number):\n")
+    def save_menu(self):
+        print("\nPlease choose from the following options (enter only \nthe number):\n")
         print("1. Save report to file")
         print("2. Return to the Main Menu")
         print("3. Exit\n")
@@ -22,8 +22,8 @@ class Save_Menu:
             if self.choice == "save":
                 print("save")
             elif self.choice == "Main Menu":
-                main_menu = self.main_menu.Main_Menu()
-                main_menu.main_menu()
+                menu = main_menu.Main_Menu()
+                menu.main_menu()
             elif self.choice == "Exit":
                 helper_functions.exit_app()
 
