@@ -30,8 +30,10 @@ class Report_Creator(Analysis_Utils):
         print(self.median_val)
         print(self.min_val)
         print(self.max_val)
-        print("-------------------")
-        time.sleep(3)
+        print("-------------------\n\n")
+        time.sleep(2)
+        print("Press Enter for more options.")
+        input()
 
     def save_report(self):
         print("save")
