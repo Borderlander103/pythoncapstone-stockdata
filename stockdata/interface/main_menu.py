@@ -27,8 +27,6 @@ class Main_Menu:
                 self.get_currency()
             self.get_key(self.choice)
             self.get_value(self.choice)
-            # return (self.key, self.value, self.currency)
-            # print(settings.key, settings.value, settings.currency)
 
     def get_key(self, choice):
         settings.key = choice

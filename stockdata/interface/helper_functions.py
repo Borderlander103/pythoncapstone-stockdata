@@ -1,9 +1,6 @@
 import time
 import settings
-from interface import main_menu, save_menu
-
-
-# main_menu = main_menu.Main_Menu()
+from interface import save_menu
 
 
 def validation():
@@ -11,10 +8,8 @@ def validation():
     print("\nYou entered an invalid option. Try again.\n")
     time.sleep(2)
     if settings.key == None:
-        menu = main_menu.Main_Menu()
-        menu.main_menu()
+        restart()
     else:
-        reset_settings()
         menu = save_menu.Save_Menu()
         menu.save_menu()
 
@@ -23,6 +18,13 @@ def exit_app():
     time.sleep(1)
     print("\nGoodbye.\n")
     quit()
+
+
+def restart():
+    import app
+    reset_settings()
+    menu = app.App()
+    menu.app()
 
 
 def reset_settings():

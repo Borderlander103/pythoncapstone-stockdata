@@ -1,6 +1,6 @@
-import settings
 import time
-from interface import main_menu, helper_functions
+import settings
+from interface import helper_functions
 
 
 class Save_Menu:
@@ -22,8 +22,7 @@ class Save_Menu:
             if self.choice == "save":
                 print("save")
             elif self.choice == "Main Menu":
-                menu = main_menu.Main_Menu()
-                menu.main_menu()
+                helper_functions.restart()
             elif self.choice == "Exit":
                 helper_functions.exit_app()
 

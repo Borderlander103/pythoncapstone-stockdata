@@ -14,6 +14,9 @@ class App:
     def __init__(self):
         self.populate_stocks()
         welcome.welcome()
+        self.app()
+
+    def app(self):
         main_menu.main_menu()
         filters.filter_stocks()
         self.populate_stock_values()

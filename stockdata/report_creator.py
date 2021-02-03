@@ -31,7 +31,7 @@ class Report_Creator(Analysis_Utils):
         print(self.min_val)
         print(self.max_val)
         print("-------------------\n\n")
-        time.sleep(2)
+        time.sleep(3)
         print("Press Enter for more options.")
         input()
 
