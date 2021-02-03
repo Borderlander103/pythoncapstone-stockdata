@@ -19,7 +19,7 @@ class Main_Menu:
         try:
             self.choice = self.options[int(input()) - 1]
         except:
-            helper_functions.main_validation()
+            helper_functions.validation()
         else:
             if self.choice == "Exit":
                 helper_functions.exit_app()
