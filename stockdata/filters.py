@@ -24,8 +24,8 @@ def marketFilter(stock):
 
 def filter_stocks():
     if settings.key == 'name':
-        settings.filtered_stocks = list(filter(
-            nameFilter, settings.stocks))
+        settings.filtered_stocks = filter(
+            nameFilter, settings.stocks)
     elif settings.key == 'industry':
         settings.filtered_stocks = filter(
             industryFilter, settings.stocks)

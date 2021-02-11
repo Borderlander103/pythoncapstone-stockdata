@@ -53,9 +53,16 @@ class Report_Creator(Analysis_Utils):
         report.write("\n-------------------")
         report.close()
         time.sleep(2)
-        print(f"\nThe report has been saved as '{report_name}'.")
+        print(f"\nThe report has been saved in '{report_name}'.")
         print("\nIt is located in here:")
         print(f"{Path().absolute()}\{output_folder}")
         time.sleep(2)
         print("\nPress Enter to return to the Main Menu.")
         input()
+
+    def clear_report(self):
+        self.headline = None
+        self.average_val = None
+        self.median_val = None
+        self.min_val = None
+        self.max_val = None

@@ -2,7 +2,8 @@ import csv
 import dateutil.parser
 from pathlib import Path
 
-resources_folder = Path("resources/")
+resources_folder = Path(__file__).absolute().parent
+# resources_folder = Path("resources/")
 csv_path = resources_folder / 'stocks.csv'
 rows = []
 

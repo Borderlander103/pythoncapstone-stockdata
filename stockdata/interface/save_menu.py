@@ -1,5 +1,3 @@
-import time
-import settings
 import report_creator
 from interface import helper_functions
 
@@ -20,23 +18,13 @@ class Save_Menu:
         except:
             helper_functions.validation()
         else:
+            report = report_creator.Report_Creator()
             if self.choice == "save":
-                report = report_creator.Report_Creator()
                 report.save_report()
+                report.clear_report()
                 helper_functions.restart()
             elif self.choice == "Main Menu":
+                report.clear_report()
                 helper_functions.restart()
             elif self.choice == "Exit":
                 helper_functions.exit_app()
-
-    def get_key(self, choice):
-        settings.key = choice
-
-    def get_value(self, choice):
-        print(f"\nPlease enter the desired {choice}:\n")
-        settings.value = input()
-
-    def get_currency(self):
-        print(f"\nPlease enter the three letter code for your \ndesired currency (e.g. USD, EUR):\n")
-        settings.currency = input().upper()
-        self.choice = "name"
